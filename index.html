@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English B1 Prep — Твій особистий помічник</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="logo">B1 Assistant</div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('home')">🏠 Головна</button>
+    <button class="nav-tab" onclick="showSection('grammar')">📖 Граматика</button>
+    <button class="nav-tab" onclick="showSection('vocab')">📝 Слова</button>
+    <button class="nav-tab" onclick="showSection('phrases')">💬 Фрази</button>
+  </div>
+</nav>
+
+<main>
+<div id="section-home" class="section active">
+  <div class="hero">
+    <h1>Твій шлях до <em>рівня B1</em></h1>
+    <p>Весь Pre-Intermediate матеріал в одному місці: граматика, словник і корисні фрази для розмови.</p>
+    <div class="hero-grid">
+      <div class="hero-card" onclick="showSection('grammar')">
+        <div class="icon">📖</div>
+        <h3>12 тем граматики</h3>
+        <p>Від Present Perfect до Conditionals з поясненнями українською</p>
+      </div>
+      <div class="hero-card" onclick="showSection('vocab')">
+        <div class="icon">📝</div>
+        <h3>80+ слів</h3>
+        <p>Картки з вимовою, прикладами і темами</p>
+      </div>
+      <div class="hero-card" onclick="showSection('phrases')">
+        <div class="icon">💬</div>
+        <h3>Розмовні фрази</h3>
+        <p>Що сказати в реальних ситуаціях</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-grammar" class="section">
+  <h1 class="section-title">Граматика Pre-Intermediate → B1</h1>
+  <p class="section-sub">Обери тему і вивчи правило з прикладами</p>
+  <div class="topic-grid" id="topic-grid"></div>
+  <div id="grammar-panels"></div>
+</div>
+
+<div id="section-vocab" class="section">
+  <h1 class="section-title">Словник</h1>
+  <p class="section-sub">Клікни на картку щоб побачити переклад</p>
+  <div class="vocab-controls">
+    <input class="search-input" id="vocab-search" placeholder="🔍 Пошук слова..." oninput="filterVocab()">
+    <button class="filter-btn active" onclick="filterCat('all',this)">Всі</button>
+    <button class="filter-btn" onclick="filterCat('travel',this)">Подорожі</button>
+    <button class="filter-btn" onclick="filterCat('health',this)">Здоров'я</button>
+    <button class="filter-btn" onclick="filterCat('work',this)">Робота</button>
+    <button class="filter-btn" onclick="filterCat('feelings',this)">Емоції</button>
+    <button class="filter-btn" onclick="filterCat('tech',this)">Технології</button>
+    <button class="filter-btn" onclick="filterCat('common',this)">Загальні</button>
+  </div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<!-- PHRASES -->
+<div id="section-phrases" class="section">
+  <h1 class="section-title">Розмовні фрази</h1>
+  <p class="section-sub">Корисні фрази для реальних ситуацій</p>
+  <div class="phrase-grid" id="phrase-grid"></div>
+</div>
+
+
+</main>
+</body>
+</html>
